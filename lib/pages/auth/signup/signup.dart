@@ -1,5 +1,8 @@
 import 'package:carmelschool/constants/color.dart';
+import 'package:carmelschool/pages/auth/login/login.dart';
 import 'package:carmelschool/pages/auth/login/logincontroller.dart';
+import 'package:carmelschool/pages/sidedrawer/privacypolicy/privacypolicy.dart';
+import 'package:carmelschool/pages/sidedrawer/termsofservice/termofservice.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -321,7 +324,8 @@ class SignUp extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Get.to(SignUp());
+                              Get.to(TermsOfService());
+
                             },
                             child: const Text(
                               " Terms & Conditions",
@@ -348,7 +352,7 @@ class SignUp extends StatelessWidget {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Get.to(SignUp());
+                              Get.to(PrivacyPolicy());
                             },
                             child: const Text(
                               "  Privacy Policy",
@@ -369,7 +373,7 @@ class SignUp extends StatelessWidget {
 
                         child: CustomButton(
                           onPressed: () {
-                            customDialog(loadingText: "Signing Up", );
+                            customLoadingDialog(loadingText: "Signing Up", );
                           },
                           title: "Sign Up",
                           backgroundColor: blue,
@@ -402,16 +406,19 @@ class SignUp extends StatelessWidget {
                             onTap: () {
                               Get.to(SignUp());
                             },
-                            child: const Text(
-                              " Log In",
-                              style: TextStyle(
-                                fontFamily: "SF Pro Text",
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                                color: blue,
-                                height: 19 / 16,
+                            child: GestureDetector(
+                              onTap: ()=>Get.to(LogIn()),
+                              child: const Text(
+                                " Log In",
+                                style: TextStyle(
+                                  fontFamily: "SF Pro Text",
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                  color: blue,
+                                  height: 19 / 16,
+                                ),
+                                textAlign: TextAlign.center,
                               ),
-                              textAlign: TextAlign.center,
                             ),
                           ),
 

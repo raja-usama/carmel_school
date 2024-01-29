@@ -1,4 +1,5 @@
 import 'package:carmelschool/constants/color.dart';
+import 'package:carmelschool/pages/auth/forgetpassword/forgetpassword.dart';
 import 'package:carmelschool/pages/auth/login/logincontroller.dart';
 import 'package:carmelschool/pages/auth/signup/signup.dart';
 import 'package:flutter/material.dart';
@@ -128,18 +129,21 @@ class LogIn extends StatelessWidget {
                         const SizedBox(
                           height: 18,
                         ),
-                        Container(
-                          alignment: Alignment.centerRight,
-                          child: const Text(
-                            "Forget Password?",
-                            style: TextStyle(
-                              fontFamily: "SF Pro Text",
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0xff787575),
-                              height: 17 / 14,
+                        GestureDetector(
+                          onTap: ()=>confirmationDialog(confirmationText: 'Are you sure want to delete\nyour account?',onConfirm: (){}),
+                          child: Container(
+                            alignment: Alignment.centerRight,
+                            child: const Text(
+                              "Forget Password?",
+                              style: TextStyle(
+                                fontFamily: "SF Pro Text",
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xff787575),
+                                height: 17 / 14,
+                              ),
+                              textAlign: TextAlign.left,
                             ),
-                            textAlign: TextAlign.left,
                           ),
                         ),
                         const SizedBox(

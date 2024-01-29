@@ -1,5 +1,6 @@
 import 'package:carmelschool/constants/color.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MyAppBar extends StatelessWidget {
 
@@ -25,15 +26,19 @@ class MyAppBar extends StatelessWidget {
         children: [
 
           SizedBox(width: 24,),
-          Container(
+          GestureDetector(
 
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: bgColor,
+            onTap: ()=>Get.back(),
+            child: Container(
 
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: bgColor,
+
+              ),
+              padding: const EdgeInsets.all(10),
+              child: const Icon(Icons.arrow_back,color: blue,),
             ),
-            padding: const EdgeInsets.all(10),
-            child: const Icon(Icons.arrow_back,color: blue,),
           ),
         ],
       ),

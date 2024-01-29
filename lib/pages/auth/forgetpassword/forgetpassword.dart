@@ -2,7 +2,10 @@ import 'package:carmelschool/constants/color.dart';
 import 'package:carmelschool/widgets/custom_button.dart';
 import 'package:carmelschool/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
+
+import '../../../widgets/loading.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
@@ -64,7 +67,11 @@ class ForgetPassword extends StatelessWidget {
                   ),
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 24),
-                    child: const CustomButton(
+                    child:  CustomButton(
+                      onPressed: (){
+
+                        // Get.to()
+                      },
                       title: "Submit",
                       backgroundColor: blue,
                       textColor: white,
