@@ -1,4 +1,6 @@
 import 'package:carmelschool/constants/color.dart';
+import 'package:carmelschool/pages/admin/dashboard/dashboard.dart';
+import 'package:carmelschool/pages/admin/login/controller.dart';
 import 'package:carmelschool/pages/auth/forgetpassword/forgetpassword.dart';
 import 'package:carmelschool/pages/auth/login/logincontroller.dart';
 import 'package:carmelschool/pages/auth/signup/signup.dart';
@@ -10,10 +12,10 @@ import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_text_field.dart';
 import '../../../widgets/loading.dart';
 
-class LogIn extends StatelessWidget {
-  LogIn({super.key});
+class AdminLogIn extends StatelessWidget {
+  AdminLogIn({super.key});
 
-  var controller = Get.put(LoginController());
+  var controller = Get.put(AdminLogInController());
 
   var formKey = GlobalKey<FormState>();
 
@@ -154,7 +156,7 @@ class LogIn extends StatelessWidget {
                           onPressed: () {
 
                             if(formKey.currentState!.validate()){
-                              Get.to(HomePage());
+                              Get.to(Dashboard());
                             }
 
                             // customDialog(
@@ -170,98 +172,7 @@ class LogIn extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        width: Get.width * 0.3,
-                        height: 5,
-                        decoration: const BoxDecoration(
-                            color: white,
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(10),
-                                bottomRight: Radius.circular(10))),
-                      ),
-                      const Text(
-                        "Or",
-                        style: TextStyle(
-                          fontFamily: "SF Pro Text",
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xff787575),
-                          height: 19 / 16,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        width: Get.width * 0.3,
-                        height: 5,
-                        decoration: const BoxDecoration(
-                            color: white,
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                bottomLeft: Radius.circular(10))),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        decoration: const BoxDecoration(
-                            color: white,
-                            borderRadius: BorderRadius.all(Radius.circular(10))),
-                        child: Image.asset(
-                          "assets/images/google.png",
-                          scale: 1.5,
-                        ),
-                      ),
 
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        "Don’t have an account? ",
-                        style: TextStyle(
-                          fontFamily: "SF Pro Text",
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xff787575),
-                          height: 19 / 16,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Get.to(SignUp());
-                        },
-                        child: const Text(
-                          " Sign Up",
-                          style: TextStyle(
-                            fontFamily: "SF Pro Text",
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                            color: blue,
-                            height: 19 / 16,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
                   const SizedBox(
                     height: 20,
                   )

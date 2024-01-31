@@ -8,6 +8,9 @@ import 'package:carmelschool/pages/sidedrawer/widgets/profilecard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../widgets/loading.dart';
+import '../myattendance/myattendance.dart';
+
 class SideDrawer extends StatelessWidget {
   const SideDrawer({super.key});
 
@@ -40,7 +43,7 @@ class SideDrawer extends StatelessWidget {
                 height: 20,
               ),
               GestureDetector(
-                onTap: () => Get.to(const EditProfile()),
+                onTap: () => Get.to( MyAttendance()),
                 child: const DrawerCards(
                   title: "My Attendance",
                   icon: "assets/images/dob.png",
@@ -87,10 +90,16 @@ class SideDrawer extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-              const DrawerCards(
-                isChangeColor: true,
-                title: "Delete Account",
-                icon: "assets/images/delete.png",
+              GestureDetector(
+
+                onTap: (){
+                  confirmationDialog(confirmationText: "Are you sure you want to\n delete your account ?",onConfirm: (){});
+                },
+                child: const DrawerCards(
+                  isChangeColor: true,
+                  title: "Delete Account",
+                  icon: "assets/images/delete.png",
+                ),
               ),
               const SizedBox(
                 height: 60,

@@ -1,3 +1,5 @@
+import 'package:carmelschool/pages/admin/dashboard/dashboard.dart';
+import 'package:carmelschool/pages/admin/login/adminlogin.dart';
 import 'package:carmelschool/pages/auth/forgetpassword/forgetpassword.dart';
 import 'package:carmelschool/pages/auth/login/login.dart';
 import 'package:carmelschool/pages/auth/verifyemail/verifyemail.dart';
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
       title: 'Carmel',
       theme: ThemeData(
         // This is the theme of your application.
-        //
+         //
         // TRY THIS: Try running your application with "flutter run". You'll see
         // the application has a purple toolbar. Then, without quitting the app,
         // try changing the seedColor in the colorScheme below to Colors.green
@@ -45,23 +47,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  HomePage(),
+      home: Dashboard(),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -83,7 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
             AnimatedPositioned(
               duration: const Duration(seconds: 1),
               curve: Curves.easeInOut,
-              right: _isVisible ? 0 : -Get.width-60 , // Adjust this value according to your needs
+              right: _isVisible
+                  ? 0
+                  : -Get.width -
+                      60, // Adjust this value according to your needs
               child: Container(
                 width: 50,
                 height: 200,

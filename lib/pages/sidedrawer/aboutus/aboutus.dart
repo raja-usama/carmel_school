@@ -18,9 +18,7 @@ final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: SideDrawer(),
-    drawerScrimColor: Colors.black.withOpacity(0.75),
-      key: scaffoldKey,
+
 
 
 
@@ -36,57 +34,54 @@ final scaffoldKey = GlobalKey<ScaffoldState>();
           padding: const EdgeInsets.all(24.0),
           child: Column(
             children: [
-              GestureDetector(
-                onTap: (){
-                  scaffoldKey.currentState!.openDrawer();
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 68,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      color: Colors.white),
-                  child: Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      const SizedBox(
-                        width: 15,
+              Container(
+                width: double.infinity,
+                height: 68,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.white),
+                child: Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    Container(
+                      width: 68,
+                      height: 56,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: const Color(0xffeaeefa)),
+                      child: Image.asset(
+                        "assets/images/logo.png",
+                        width: 48,
+                        height: 48,
                       ),
-                      Container(
-                        width: 68,
-                        height: 56,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            color: const Color(0xffeaeefa)),
-                        child: Image.asset(
-                          "assets/images/logo.png",
-                          width: 48,
-                          height: 48,
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      const Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Attendance QR",
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                              )),
-                          Text("Version V1",
-                              style: TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.w500,
-                              ))
-                        ],
-                      )
-                    ],
-                  ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    const Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Attendance QR",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                            )),
+                        Text("Version V1",
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w500,
+                            ))
+                      ],
+                    )
+                  ],
                 ),
               ),
+
+              SizedBox(height: 20,),
 
 
               const Text(
