@@ -1,5 +1,7 @@
 
 import 'package:carmelschool/constants/color.dart';
+import 'package:carmelschool/pages/admin/reports/reports.dart';
+import 'package:carmelschool/pages/admin/scancode/scancode.dart';
 import 'package:carmelschool/pages/admin/students/students.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -57,9 +59,15 @@ class Dashboard  extends StatelessWidget {
                   onTap: ()=>Get.to( Students()),
                   child: Image.asset("assets/images/student.png")),
               const SizedBox(height: 24,),
-              Image.asset("assets/images/scan.png"),
+              GestureDetector(
+
+                  onTap: ()=>Get.to(ScanCode()),
+                  child: Image.asset("assets/images/scan.png")),
               const SizedBox(height: 24,),
-              Image.asset("assets/images/report.png"),
+              GestureDetector(
+
+                  onTap: ()=>Get.to(Reports()),
+                  child: Image.asset("assets/images/report.png")),
             ],
           ),
         ),
