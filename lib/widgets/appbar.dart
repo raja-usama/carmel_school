@@ -5,13 +5,22 @@ import 'package:get/get.dart';
 class MyAppBar extends StatelessWidget {
 
   final String title;
-  const MyAppBar({super.key, required this.title});
+  final bool? isAppBarBorderRadius;
+
+  const MyAppBar({super.key, required this.title, this.isAppBarBorderRadius=false});
 
   @override
   Widget build(BuildContext context) {
 
 
     return AppBar(
+      shape:
+      RoundedRectangleBorder(
+          borderRadius:
+          isAppBarBorderRadius==true?
+        const BorderRadius.only(bottomRight: Radius.circular(15),bottomLeft: Radius.circular( 15))
+      :BorderRadius.zero
+      ),
       // forceMaterialTransparency: ,
       scrolledUnderElevation: 0,
 
@@ -25,11 +34,10 @@ class MyAppBar extends StatelessWidget {
           )
       ),
       leadingWidth: 150,
-
       leading: Row(
         children: [
 
-          SizedBox(width: 24,),
+          const SizedBox(width: 24,),
           GestureDetector(
 
             onTap: ()=>Get.back(),

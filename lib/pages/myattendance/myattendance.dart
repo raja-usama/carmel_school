@@ -20,21 +20,21 @@ var controller= Get.put(AttendanceController());
       body: Column(
         children: [
           // SizedBox(height: 50,),
-          MyAppBar(title: "My Attendance"),
-          SizedBox(height: 30,),
+          const MyAppBar(title: "My Attendance"),
+          const SizedBox(height: 30,),
 
 
 
           MonthDropdown(selectedMonth: controller.selectedMonth,),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           Expanded(
             child: ListView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 24,vertical: 0),
+              padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 0),
                 // itemExtent: 15,
 
                 itemCount: 10,
                 itemBuilder: (context,index){
-              return AttendanceCard();
+              return const AttendanceCard();
             }),
           )
 

@@ -3,8 +3,9 @@ import 'package:get/get.dart';
 
 class MonthDropdown extends StatelessWidget {
    RxString selectedMonth;
+   Widget ? iconData;
 
-  MonthDropdown({super.key, required this.selectedMonth});
+  MonthDropdown({super.key, required this.selectedMonth,this.iconData});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +15,11 @@ class MonthDropdown extends StatelessWidget {
           borderRadius: BorderRadius.circular(12)
 
       ),
-      margin: EdgeInsets.symmetric(horizontal: 36),
+      margin: const EdgeInsets.symmetric(horizontal: 36),
       child:  Obx(() =>DropdownButton<String>(
-        padding: EdgeInsets.symmetric(horizontal: 24),
-        underline: SizedBox(),
-
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        underline: const SizedBox(),
+        icon: iconData,
         dropdownColor: Colors.white,
         value: selectedMonth.value,
         onChanged: (String? newValue) {

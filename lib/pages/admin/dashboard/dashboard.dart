@@ -17,9 +17,9 @@ class Dashboard  extends StatelessWidget {
 
         backgroundColor: Colors.white,
         toolbarHeight: 99,
-        title: Text(
+        title: const Text(
             "Dashboard",
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w600,
             )
@@ -31,15 +31,15 @@ class Dashboard  extends StatelessWidget {
             borderRadius: BorderRadius.circular(16)
 
           ),
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: Image.asset("assets/images/notif.png",scale: 1.7,),
         ),
-          SizedBox(width: 24,)
+          const SizedBox(width: 24,)
         ],
         leadingWidth: 150,
         
 
-        leading: SizedBox(),
+        leading: const SizedBox(),
 
         centerTitle: true,
 
@@ -47,22 +47,21 @@ class Dashboard  extends StatelessWidget {
       ),
 
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 24,vertical: 24),
-        child: Column(
-          children: [
-
-
-            GestureDetector(
-
-                onTap: ()=>Get.to(Students()),
-
-                child: Image.asset("assets/images/student.png")),
-            SizedBox(height: 24,),
-            Image.asset("assets/images/scan.png"),
-            SizedBox(height: 24,),
-
-            Image.asset("assets/images/report.png"),
-          ],
+        margin: const EdgeInsets.symmetric(horizontal: 24,vertical: 24),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+          
+          
+              GestureDetector(
+                  onTap: ()=>Get.to( Students()),
+                  child: Image.asset("assets/images/student.png")),
+              const SizedBox(height: 24,),
+              Image.asset("assets/images/scan.png"),
+              const SizedBox(height: 24,),
+              Image.asset("assets/images/report.png"),
+            ],
+          ),
         ),
       ),
 

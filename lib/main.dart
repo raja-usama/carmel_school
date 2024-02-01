@@ -1,5 +1,8 @@
+import 'package:carmelschool/pages/Notifications/notifications_screen.dart';
+import 'package:carmelschool/pages/Scan_Attendy/scan_attendy.dart';
 import 'package:carmelschool/pages/admin/dashboard/dashboard.dart';
 import 'package:carmelschool/pages/admin/login/adminlogin.dart';
+import 'package:carmelschool/pages/admin/students/students.dart';
 import 'package:carmelschool/pages/auth/forgetpassword/forgetpassword.dart';
 import 'package:carmelschool/pages/auth/login/login.dart';
 import 'package:carmelschool/pages/auth/verifyemail/verifyemail.dart';
@@ -47,7 +50,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Dashboard(),
+      home: Students(),
     );
   }
 }
