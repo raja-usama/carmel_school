@@ -2,6 +2,7 @@ import 'package:carmelschool/pages/auth/forgetpassword/forgetpassword.dart';
 import 'package:carmelschool/pages/auth/login/login.dart';
 import 'package:carmelschool/pages/auth/verifyemail/verifyemail.dart';
 import 'package:carmelschool/pages/homepage/homepage.dart';
+import 'package:carmelschool/pages/myattendence/myattendence.dart';
 import 'package:carmelschool/pages/sidedrawer/aboutus/aboutus.dart';
 import 'package:carmelschool/pages/sidedrawer/editprofile/editprofile.dart';
 import 'package:carmelschool/pages/sidedrawer/privacypolicy/privacypolicy.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  HomePage(),
+      home:  MyAttendance(),
     );
   }
 }
