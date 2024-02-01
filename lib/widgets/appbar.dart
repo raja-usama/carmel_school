@@ -12,6 +12,10 @@ class MyAppBar extends StatelessWidget {
 
 
     return AppBar(
+      // forceMaterialTransparency: ,
+      scrolledUnderElevation: 0,
+
+      backgroundColor: Colors.white,
       toolbarHeight: 99,
       title: Text(
           title,

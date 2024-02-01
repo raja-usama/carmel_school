@@ -130,51 +130,53 @@ void confirmationDialog({
   required VoidCallback onConfirm
 }) {
   showDialog(
+
     barrierDismissible: false,
     context: Get.context!,
     builder: (BuildContext context) {
-      return BackdropFilter(
-        filter: ImageFilter.blur(sigmaY: 2, sigmaX: 2),
-        child: Dialog(
-          alignment: AlignmentDirectional.center,
-          insetPadding: const EdgeInsets.symmetric(horizontal: 16),
-          shape: RoundedRectangleBorder(
+      return Dialog(
+
+
+        alignment: AlignmentDirectional.center,
+        backgroundColor:  Colors.black87,
+        insetPadding: const EdgeInsets.symmetric(horizontal: 16),
+        shape: RoundedRectangleBorder(
+
+          borderRadius: BorderRadius.circular(18),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(18),
+            // color: Colors.black54.withOpacity(0.87),
           ),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(18),
-              color: Colors.black.withOpacity(0.8),
-            ),
-            padding:
-            const EdgeInsets.only(right: 24, left: 24, bottom: 40, top: 30),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
+          padding:
+          const EdgeInsets.only(right: 24, left: 24, bottom: 40, top: 30),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
 
-                Text(confirmationText,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      color: Colors.white70,
-                      fontWeight: FontWeight.w800,
-                    )),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                 children: [
-                   CustomButton(title: "No",backgroundColor: Color(0xffFF6F61),width: 120,height: 40,textColor: white, onPressed: (){
-                    Get.back();
-                   },),
+              Text(confirmationText,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.white70,
+                    fontWeight: FontWeight.w800,
+                  )),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+               children: [
+                 CustomButton(title: "No",backgroundColor: Color(0xffFF6F61),width: 80,height: 35,textColor: white, onPressed: (){
+                  Get.back();
+                 },),
 
-                   SizedBox(width: 30),
-                   CustomButton(title: "Yes",backgroundColor: blue,width: 120,height: 40,textColor: white, onPressed: onConfirm),
-                 ],
-               )
-              ],
-            ),
+                 SizedBox(width: 30),
+                 CustomButton(title: "Yes",backgroundColor: blue,width: 80,height: 35,textColor: white, onPressed: onConfirm),
+               ],
+             )
+            ],
           ),
         ),
       );
