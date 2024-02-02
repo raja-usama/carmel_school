@@ -1,5 +1,6 @@
 
 import 'package:carmelschool/constants/color.dart';
+import 'package:carmelschool/pages/admin/Notifications/notifications_screen.dart';
 import 'package:carmelschool/pages/admin/reports/reports.dart';
 import 'package:carmelschool/pages/admin/scancode/scancode.dart';
 import 'package:carmelschool/pages/admin/students/students.dart';
@@ -34,11 +35,15 @@ class Dashboard  extends StatelessWidget {
 
           ),
           padding: const EdgeInsets.all(8),
-          child: Image.asset("assets/images/notif.png",scale: 1.7,),
+          child: GestureDetector(
+              onTap: () {
+                Get.to(()=>NotificationsScreen());
+              },
+              child: Image.asset("assets/images/notif.png",scale: 1.7,)),
         ),
           const SizedBox(width: 24,)
         ],
-        leadingWidth: 150,
+        leadingWidth: 120,
         
 
         leading: const SizedBox(),

@@ -13,7 +13,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
-import 'pages/auth/signup/signup.dart';
 
 void main() {
   runApp(const MyApp());

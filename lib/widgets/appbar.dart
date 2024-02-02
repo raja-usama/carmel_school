@@ -33,13 +33,11 @@ class MyAppBar extends StatelessWidget {
             fontWeight: FontWeight.w600,
           )
       ),
-      leadingWidth: 150,
+      leadingWidth: 120,
       leading: Row(
         children: [
-
           const SizedBox(width: 24,),
           GestureDetector(
-
             onTap: ()=>Get.back(),
             child: Container(
 

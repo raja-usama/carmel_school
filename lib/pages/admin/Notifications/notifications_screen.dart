@@ -22,7 +22,7 @@ class NotificationsScreen extends StatelessWidget {
 
       body: Column(
         children: [
-          const MyAppBar(title: "Notifications"),
+          const MyAppBar(title: "Notifications",),
           const SizedBox(height: 20,),
           Expanded(
             child: ListView.builder(
@@ -30,7 +30,7 @@ class NotificationsScreen extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 itemBuilder: (context,index){
                   return  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 24,vertical: 5),
+                    margin: const EdgeInsets.symmetric(horizontal:15,vertical: 5),
                     // margin: EdgeInsets.only(top: 10),
                     padding: EdgeInsets.zero,
                     width: double.infinity,
