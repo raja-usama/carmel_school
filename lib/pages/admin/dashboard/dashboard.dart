@@ -1,5 +1,8 @@
 
 import 'package:carmelschool/constants/color.dart';
+import 'package:carmelschool/pages/admin/Notifications/notifications_screen.dart';
+import 'package:carmelschool/pages/admin/reports/reports.dart';
+import 'package:carmelschool/pages/admin/scancode/scancode.dart';
 import 'package:carmelschool/pages/admin/students/students.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -17,9 +20,9 @@ class Dashboard  extends StatelessWidget {
 
         backgroundColor: Colors.white,
         toolbarHeight: 99,
-        title: Text(
+        title: const Text(
             "Dashboard",
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.w600,
             )
@@ -31,15 +34,19 @@ class Dashboard  extends StatelessWidget {
             borderRadius: BorderRadius.circular(16)
 
           ),
-          padding: EdgeInsets.all(8),
-          child: Image.asset("assets/images/notif.png",scale: 1.7,),
+          padding: const EdgeInsets.all(8),
+          child: GestureDetector(
+              onTap: () {
+                Get.to(()=>NotificationsScreen());
+              },
+              child: Image.asset("assets/images/notif.png",scale: 1.7,)),
         ),
-          SizedBox(width: 24,)
+          const SizedBox(width: 24,)
         ],
-        leadingWidth: 150,
+        leadingWidth: 120,
         
 
-        leading: SizedBox(),
+        leading: const SizedBox(),
 
         centerTitle: true,
 
@@ -47,22 +54,27 @@ class Dashboard  extends StatelessWidget {
       ),
 
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 24,vertical: 24),
-        child: Column(
-          children: [
+        margin: const EdgeInsets.symmetric(horizontal: 24,vertical: 24),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+          
+          
+              GestureDetector(
+                  onTap: ()=>Get.to( Students()),
+                  child: Image.asset("assets/images/student.png")),
+              const SizedBox(height: 24,),
+              GestureDetector(
 
+                  onTap: ()=>Get.to(ScanCode()),
+                  child: Image.asset("assets/images/scan.png")),
+              const SizedBox(height: 24,),
+              GestureDetector(
 
-            GestureDetector(
-
-                onTap: ()=>Get.to(Students()),
-
-                child: Image.asset("assets/images/student.png")),
-            SizedBox(height: 24,),
-            Image.asset("assets/images/scan.png"),
-            SizedBox(height: 24,),
-
-            Image.asset("assets/images/report.png"),
-          ],
+                  onTap: ()=>Get.to(Reports()),
+                  child: Image.asset("assets/images/report.png")),
+            ],
+          ),
         ),
       ),
 

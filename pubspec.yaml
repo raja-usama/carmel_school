@@ -39,6 +39,7 @@ dependencies:
   nuts_activity_indicator: ^1.0.0
   get: ^4.6.6
   pinput: ^3.0.1
+  qr_code_scanner: ^1.0.1
 
 dev_dependencies:
   flutter_test:

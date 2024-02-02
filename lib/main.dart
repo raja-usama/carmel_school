@@ -1,4 +1,6 @@
+import 'package:carmelschool/pages/admin/dashboard/dashboard.dart';
 import 'package:carmelschool/pages/admin/login/adminlogin.dart';
+import 'package:carmelschool/pages/admin/students/students.dart';
 import 'package:carmelschool/pages/auth/forgetpassword/forgetpassword.dart';
 import 'package:carmelschool/pages/auth/login/login.dart';
 import 'package:carmelschool/pages/auth/verifyemail/verifyemail.dart';
@@ -11,7 +13,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 
-import 'pages/auth/signup/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       title: 'Carmel',
       theme: ThemeData(
         // This is the theme of your application.
-        //
+         //
         // TRY THIS: Try running your application with "flutter run". You'll see
         // the application has a purple toolbar. Then, without quitting the app,
         // try changing the seedColor in the colorScheme below to Colors.green
@@ -46,68 +47,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  AdminLogIn(),
+      home: AdminLogIn(),
     );
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  bool _isVisible = true;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Right to Left Animation'),
-      ),
-      body: Center(
-        child: Stack(
-          children: [
-            AnimatedPositioned(
-              duration: const Duration(seconds: 1),
-              curve: Curves.easeInOut,
-              right: _isVisible ? 0 : -Get.width-60 , // Adjust this value according to your needs
-              child: Container(
-                width: 50,
-                height: 200,
-                color: Colors.blue,
-                child: const Center(
-                  child: Text(
-                    'Animated Container',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            _isVisible = !_isVisible;
-          });
-        },
-        child: const Icon(Icons.play_arrow),
-      ),
-    );
-  }
-}
